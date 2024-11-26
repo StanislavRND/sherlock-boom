@@ -39,7 +39,7 @@ export const LastQuestion = () => {
                     htmlFor={`option-${option.id}`}
                     className="question__custom-checkbox"
                     style={{
-                      backgroundColor: isSelected ? (isCorrect ? 'green' : 'red') : '#e3ceb8',
+                      backgroundColor: isSelected ? (isCorrect ? 'green' : 'red') : '#f3e4d4',
                       borderColor: isSelected ? (isCorrect ? 'green' : 'red') : 'black',
                     }}></label>
                   <span className="question__label" style={{ color: textColor }}>

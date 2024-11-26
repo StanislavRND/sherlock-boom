@@ -53,7 +53,7 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
                     htmlFor={option.text}
                     className="question__custom-checkbox"
                     style={{
-                      backgroundColor: isSelected ? (isLongest ? 'green' : 'red') : '#e3ceb8',
+                      backgroundColor: isSelected ? (isLongest ? 'green' : 'red') : '#f3e4d4',
                       borderColor: isSelected ? (isLongest ? 'green' : 'red') : 'black',
                     }}></label>
                   <div className="question__label" style={{ color: textColor }}>

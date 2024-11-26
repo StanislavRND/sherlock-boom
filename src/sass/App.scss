@@ -1,0 +1,285 @@
+@use './normalize';
+
+// GLOBAL
+.wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 15px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 245, 220, 0.85);
+}
+
+// HEADER
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 250px;
+
+  color: #333333;
+
+  &__title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 35px;
+
+    span {
+      color: #cb1d1d;
+    }
+  }
+
+  &__desc {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #cb1d1d;
+    letter-spacing: 0.4px;
+  }
+}
+
+// Intro
+.intro__title {
+  font-size: 2.8rem;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.intro__desc {
+  font-size: 2rem;
+  color: #333333;
+  font-weight: 500;
+  margin-top: 30px;
+  letter-spacing: 1.5px;
+  line-height: 42px;
+  padding: 0 30px;
+
+  span,
+  a {
+    color: #cb1d1d;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+  }
+
+  a:hover {
+    font-size: 2.05rem;
+    transition: 0.3s ease-in-out;
+    color: #a20000;
+  }
+}
+
+.questions {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__convert {
+    font-size: 2.05rem;
+    color: #cb1d1d;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+}
+
+.question {
+  width: 70%;
+  background-color: #e3ceb8;
+  border-radius: 15px;
+  color: #333333;
+  padding: 50px 70px;
+  margin-bottom: 100px;
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px 0px 40px;
+  }
+
+  &__comment {
+    border: 3px solid #333333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.7rem;
+    gap: 20px;
+    letter-spacing: 1.2px;
+  }
+
+  .question__option-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.7rem;
+    gap: 20px;
+    letter-spacing: 1.2px;
+  }
+
+  &__option:last-child {
+    font-weight: 600;
+  }
+
+  &__checkbox-input {
+    display: none;
+  }
+
+  &__custom-checkbox {
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1130px) {
+  .question {
+    width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__title {
+    font-size: 3rem;
+  }
+  .header__desc {
+    font-size: 2.5rem;
+  }
+  .intro__title {
+    font-size: 2.3rem;
+  }
+  .intro__desc {
+    font-size: 1.6rem;
+  }
+  .question {
+    width: 500px;
+    padding: 30px 50px;
+  }
+  .question__title {
+    font-size: 1.7rem;
+  }
+  .question__options {
+    padding: 40px 0px 0px 0px;
+  }
+  .question__custom-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  .question__label {
+    width: 70%;
+  }
+}
+
+@media (max-width: 550px) {
+  .questions {
+    margin-top: 50px;
+  }
+  .header__title {
+    font-size: 2.5rem;
+  }
+  .header__desc {
+    font-size: 2rem;
+  }
+  .intro__title {
+    font-size: 2rem;
+  }
+  .intro__desc {
+    font-size: 1.4rem;
+  }
+  .question {
+    width: 400px;
+    padding: 30px 30px;
+    margin-bottom: 70px;
+  }
+  .question__title {
+    font-size: 1.6rem;
+  }
+  .question__options {
+    padding: 40px 0px 0px 0px;
+  }
+  .question__custom-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  .question__label {
+    width: 70%;
+    font-size: 1.5rem;
+  }
+  .questions__convert {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 468px) {
+  .header {
+    height: 200px;
+  }
+  .header__title {
+    font-size: 2.3rem;
+  }
+  .header__desc {
+    font-size: 1.8rem;
+  }
+  .intro__title {
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+  .intro__desc {
+    font-size: 1.3rem;
+  }
+  .question {
+    width: 350px;
+    padding: 30px 20px;
+  }
+  .question__title {
+    font-size: 1.4rem;
+  }
+  .question__options {
+    padding: 40px 0px 0px 0px;
+  }
+  .question__custom-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  .question__label {
+    width: 90%;
+    font-size: 1.4rem;
+  }
+  .questions__convert {
+    font-size: 1.4rem;
+  }
+}

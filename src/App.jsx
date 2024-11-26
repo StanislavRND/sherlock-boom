@@ -10,7 +10,6 @@ function App() {
       <div className="container">
         <Intro />
         <Questions />
-        <div className="questions__convert">Вы можете открыть конверт № 3!</div>
         <p className="intro__desc">
           В вашем распоряжении все материалы дела, осталось <span>ОТВЕТИТЬ НА ГЛАВНЫЙ ВОПРОС…</span>{' '}
           Перед тем как это сделать, еще раз проанализируйте мотивы и алиби подозреваемых. Ведь

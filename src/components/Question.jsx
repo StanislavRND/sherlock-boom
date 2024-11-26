@@ -22,12 +22,6 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
 
   return (
     <>
-      {question.id === 3 && (
-        <div className="questions__convert">Вы можете открыть конверт № 1!</div>
-      )}
-      {question.id === 5 && (
-        <div className="questions__convert">Вы можете открыть конверт № 2!</div>
-      )}
       <div key={question.id} className="question">
         <h3 className="question__title">
           <span style={{ marginRight: '10px' }}>{question.id}.</span> {question.title}
@@ -66,6 +60,15 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
                     className="question__comment"
                     style={{ color: textColor, border: `3px solid ${borderColor}` }}>
                     {option.comment}
+                    {question.id === 2 && option.id === 3 && (
+                      <div className="questions__convert">Вы можете открыть конверт № 1!</div>
+                    )}
+                    {question.id === 4 && option.id === 1 && (
+                      <div className="questions__convert">Вы можете открыть конверт № 2!</div>
+                    )}
+										{question.id === 5 && option.id === 4 && (
+                      <div className="questions__convert">Вы можете открыть конверт № 3!</div>
+                    )}
                   </div>
                 )}
               </div>

@@ -34,10 +34,9 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
             const isSelected = selectedOptions[question.id]?.text === option.text;
             const isLongest = longestComment && longestComment.text === option.text;
 
-            // Условия для цветов
-            const textColor = (isSelected && index === question.options.length - 1) ? '#FFB900' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
-            const borderColor = (isSelected && index === question.options.length - 1) ? '#FFB900' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
-            const checkboxColor = (isSelected && index === question.options.length - 1) ? '#FFB900' : (isSelected ? (isLongest ? 'green' : 'red') : '#f3e4d4');
+            const textColor = (isSelected && index === question.options.length - 1) ? '#5A5A5A' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
+            const borderColor = (isSelected && index === question.options.length - 1) ? '#5A5A5A' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
+            const checkboxColor = (isSelected && index === question.options.length - 1) ? '#5A5A5A' : (isSelected ? (isLongest ? 'green' : 'red') : '#f3e4d4');
 
             return (
               <div key={option.id} className="question__option">

@@ -10,7 +10,7 @@ function App() {
       <div className="container">
         <Intro />
         <Questions />
-        <p style={{marginTop: '0px'}} className="intro__desc">
+        <p style={{ marginTop: '0px' }} className="intro__desc">
           В вашем распоряжении все материалы дела, осталось <span>ОТВЕТИТЬ НА ГЛАВНЫЙ ВОПРОС…</span>{' '}
           Перед тем как это сделать, еще раз проанализируйте мотивы и алиби подозреваемых. Ведь
           нельзя допустить, чтобы невиновный человек был осужден.

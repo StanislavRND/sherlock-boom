@@ -1,19 +1,13 @@
 import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
+import { getLongestComment } from '../libs/longestComment';
+import { getBorderColor, getCheckboxColor, getTextColor } from './../libs/getStyles';
 
 export const Question = ({ question, selectedOptions, handleSelect }) => {
   const [longestComment, setLongestComment] = useState(null);
 
   useEffect(() => {
-    let longest = null;
-    let maxLength = 0;
-    question.options.forEach((option) => {
-      if (option.comment && option.comment.length > maxLength) {
-        maxLength = option.comment.length;
-        longest = option;
-      }
-    });
-    setLongestComment(longest);
+    getLongestComment(question, setLongestComment);
   }, [question.options]);
 
   const handleCheckboxChange = (questionId, optionText, optionComment) => {
@@ -22,9 +16,9 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
 
   return (
     <>
-      <div key={question.id} className="question">
+      <div className="question">
         <h3 className="question__title">
-          <div className='question__title-margin'>
+          <div className="question__title-margin">
             <div>{question.id}.</div>
             <div>{question.title}</div>
           </div>
@@ -34,9 +28,9 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
             const isSelected = selectedOptions[question.id]?.text === option.text;
             const isLongest = longestComment && longestComment.text === option.text;
 
-            const textColor = (isSelected && index === question.options.length - 1) ? '#5A5A5A' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
-            const borderColor = (isSelected && index === question.options.length - 1) ? '#5A5A5A' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
-            const checkboxColor = (isSelected && index === question.options.length - 1) ? '#5A5A5A' : (isSelected ? (isLongest ? 'green' : 'red') : '#f3e4d4');
+            const textColor = getTextColor(question, isSelected, isLongest, index);
+            const borderColor = getBorderColor(question, isSelected, isLongest, index);
+            const checkboxColor = getCheckboxColor(question, isSelected, isLongest, index);
 
             return (
               <div key={option.id} className="question__option">

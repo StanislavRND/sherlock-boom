@@ -9,6 +9,20 @@ export const LastQuestion = () => {
     setSelectedOption(selected);
   };
 
+  const getTextColor = (isSelected, isCorrect) => {
+    if (isSelected) {
+      return isCorrect ? 'green' : 'red';
+    }
+    return '#333333';
+  };
+
+  const getBorderColor = (isSelected, isCorrect) => {
+    if (isSelected) {
+      return isCorrect ? 'green' : 'red';
+    }
+    return '#333333';
+  };
+
   return (
     <div style={{ marginTop: '70px', display: 'flex', justifyContent: 'center' }}>
       <div className="question">
@@ -21,8 +35,9 @@ export const LastQuestion = () => {
           {question.options.map((option) => {
             const isSelected = selectedOption?.id === option.id;
             const isCorrect = option.id === question.correctAnswerId;
-            const textColor = isSelected ? (isCorrect ? 'green' : 'red') : '#333333';
-            const borderColor = isSelected ? (isCorrect ? 'green' : 'red') : '#333333';
+
+            const textColor = getTextColor(isSelected, isCorrect);
+            const borderColor = getBorderColor(isSelected, isCorrect);
 
             return (
               <div key={option.id} className="question__option-1">
@@ -40,7 +55,7 @@ export const LastQuestion = () => {
                     className="question__custom-checkbox"
                     style={{
                       backgroundColor: isSelected ? (isCorrect ? 'green' : 'red') : '#f3e4d4',
-                      borderColor: isSelected ? (isCorrect ? 'green' : 'red') : 'black',
+                      borderColor: borderColor,
                     }}></label>
                   <span className="question__label" style={{ color: textColor }}>
                     {option.text}

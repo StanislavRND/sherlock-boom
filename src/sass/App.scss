@@ -13,7 +13,7 @@
   padding: 0 15px;
   position: relative;
   padding-bottom: 20px;
-	z-index: 20;
+  z-index: 20;
 }
 
 .overlay {
@@ -23,7 +23,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(245, 245, 220, 0.85);
-	z-index: 10;
+  z-index: 10;
 }
 
 // HEADER
@@ -86,7 +86,7 @@
     color: #a20000;
   }
 }
-
+// Questions
 .questions {
   margin-top: 80px;
   display: flex;
@@ -97,8 +97,8 @@
     font-size: 1.7rem;
     color: #cb1d1d;
     font-weight: 600;
-		margin-top: 20px;
-		margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     text-align: center;
   }
 }
@@ -115,6 +115,11 @@
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 1.5px;
+
+    &-margin {
+      display: flex;
+      gap: 10px;
+    }
   }
 
   &__options {
@@ -122,14 +127,6 @@
     flex-direction: column;
     gap: 20px;
     padding: 40px 20px 0px 40px;
-  }
-
-  &__comment {
-    border: 3px solid #333333;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: #333333;
   }
 
   &__option {
@@ -141,6 +138,10 @@
     letter-spacing: 1.2px;
   }
 
+  &__option:last-child {
+    font-weight: 600;
+  }
+
   .question__option-1 {
     display: flex;
     flex-direction: column;
@@ -150,8 +151,12 @@
     letter-spacing: 1.2px;
   }
 
-  &__option:last-child {
-    font-weight: 600;
+  &__comment {
+    border: 3px solid #333333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #333333;
   }
 
   &__checkbox-input {
@@ -167,11 +172,6 @@
     transition: background-color 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
   }
-}
-
-.question__title-margin {
-	display: flex;
-	gap: 10px;
 }
 
 @media (max-width: 1130px) {
@@ -222,22 +222,22 @@
   .header__desc {
     font-size: 2rem;
   }
-	.question__comment {
-		font-size: 1.3rem;
-	}
+  .question__comment {
+    font-size: 1.3rem;
+  }
   .intro__title {
     font-size: 2rem;
   }
   .intro__desc {
     font-size: 1.4rem;
-		text-align: center;
-		line-height: 35px;
-		letter-spacing: 0.5px;
-		padding: 0 15px;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 0.5px;
+    padding: 0 15px;
   }
-	.question__title-margin {
-		gap: 7px;
-	}
+  .question__title-margin {
+    gap: 7px;
+  }
   .question {
     width: 400px;
     padding: 30px 30px;
@@ -300,7 +300,7 @@
   .questions__convert {
     font-size: 1.2rem;
   }
-	.question__comment {
-		font-size: 1.2rem;
-	}
+  .question__comment {
+    font-size: 1.2rem;
+  }
 }

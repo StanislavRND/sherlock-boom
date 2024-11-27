@@ -24,7 +24,10 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
     <>
       <div key={question.id} className="question">
         <h3 className="question__title">
-          <span style={{ marginRight: '10px' }}>{question.id}.</span> {question.title}
+          <div className='question__title-margin'>
+            <div>{question.id}.</div>
+            <div >{question.title}</div>{' '}
+          </div>
         </h3>
         <div className="question__options">
           {question.options.map((option) => {
@@ -66,7 +69,7 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
                     {question.id === 4 && option.id === 1 && (
                       <div className="questions__convert">Вы можете открыть конверт № 2!</div>
                     )}
-										{question.id === 5 && option.id === 4 && (
+                    {question.id === 5 && option.id === 4 && (
                       <div className="questions__convert">Вы можете открыть конверт № 3!</div>
                     )}
                   </div>

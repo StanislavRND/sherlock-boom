@@ -169,6 +169,11 @@
   }
 }
 
+.question__title-margin {
+	display: flex;
+	gap: 10px;
+}
+
 @media (max-width: 1130px) {
   .question {
     width: 700px;
@@ -225,7 +230,14 @@
   }
   .intro__desc {
     font-size: 1.4rem;
+		text-align: center;
+		line-height: 35px;
+		letter-spacing: 0.5px;
+		padding: 0 15px;
   }
+	.question__title-margin {
+		gap: 7px;
+	}
   .question {
     width: 400px;
     padding: 30px 30px;
@@ -272,7 +284,7 @@
     padding: 30px 20px;
   }
   .question__title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
   .question__options {
     padding: 40px 0px 0px 0px;

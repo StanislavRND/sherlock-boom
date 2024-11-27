@@ -26,15 +26,18 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
         <h3 className="question__title">
           <div className='question__title-margin'>
             <div>{question.id}.</div>
-            <div >{question.title}</div>{' '}
+            <div>{question.title}</div>
           </div>
         </h3>
         <div className="question__options">
-          {question.options.map((option) => {
+          {question.options.map((option, index) => {
             const isSelected = selectedOptions[question.id]?.text === option.text;
             const isLongest = longestComment && longestComment.text === option.text;
-            const textColor = isSelected ? (isLongest ? 'green' : 'red') : '#333333';
-            const borderColor = isSelected ? (isLongest ? 'green' : 'red') : '#333333';
+
+            // Условия для цветов
+            const textColor = (isSelected && index === question.options.length - 1) ? '#F5B200' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
+            const borderColor = (isSelected && index === question.options.length - 1) ? '#F5B200' : (isSelected ? (isLongest ? 'green' : 'red') : '#333333');
+            const checkboxColor = (isSelected && index === question.options.length - 1) ? '#F5B200' : (isSelected ? (isLongest ? 'green' : 'red') : '#f3e4d4');
 
             return (
               <div key={option.id} className="question__option">
@@ -50,8 +53,8 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
                     htmlFor={option.text}
                     className="question__custom-checkbox"
                     style={{
-                      backgroundColor: isSelected ? (isLongest ? 'green' : 'red') : '#f3e4d4',
-                      borderColor: isSelected ? (isLongest ? 'green' : 'red') : 'black',
+                      backgroundColor: checkboxColor,
+                      borderColor: borderColor,
                     }}></label>
                   <div className="question__label" style={{ color: textColor }}>
                     {option.text}

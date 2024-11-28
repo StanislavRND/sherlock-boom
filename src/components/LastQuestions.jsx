@@ -25,7 +25,7 @@ export const LastQuestion = () => {
   };
 
   return (
-    <div style={{ position: 'relative', marginTop: '70px' }}>
+    <div style={{ position: 'relative', marginTop: '70px', marginBottom: '50px' }}>
       <img src={notion} alt="Notion" className="notion" />
       <div style={{ marginTop: '30px', position: 'relative', zIndex: 2 }}>
         <div className="question">

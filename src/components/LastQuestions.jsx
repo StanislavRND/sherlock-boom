@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import notion from '../../public/notion1.png';
 import question from '../lastquestion.json';
 
 export const LastQuestion = () => {
@@ -25,11 +26,7 @@ export const LastQuestion = () => {
 
   return (
     <div style={{ position: 'relative', marginTop: '70px' }}>
-      <img
-        src="../../public/notion1.png"
-        alt="Notion"
-        className="notion"
-      />
+      <img src={notion} alt="Notion" className="notion" />
       <div style={{ marginTop: '30px', position: 'relative', zIndex: 2 }}>
         <div className="question">
           <h1

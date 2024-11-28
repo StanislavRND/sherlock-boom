@@ -2,6 +2,7 @@ import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
 import { getLongestComment } from '../libs/longestComment';
 import { getBorderColor, getCheckboxColor, getTextColor } from './../libs/getStyles';
+import notion from '../../public/notion1.png'
 
 export const Question = ({ question, selectedOptions, handleSelect }) => {
   const [longestComment, setLongestComment] = useState(null);
@@ -18,7 +19,7 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
     <div className="block" style={{ position: 'relative' }}>
       <img
 			className="notion"
-        src="../../public/notion1.png"
+        src={notion}
         alt="Notion"
       />
       <div className="question" style={{ position: 'relative', zIndex: 2 }}>

@@ -15,8 +15,13 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
   };
 
   return (
-    <>
-      <div className="question">
+    <div className="block" style={{ position: 'relative' }}>
+      <img
+			className="notion"
+        src="../../public/notion1.png"
+        alt="Notion"
+      />
+      <div className="question" style={{ position: 'relative', zIndex: 2 }}>
         <h3 className="question__title">
           <div className="question__title-margin">
             <div>{question.id}.</div>
@@ -75,7 +80,7 @@ export const Question = ({ question, selectedOptions, handleSelect }) => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
